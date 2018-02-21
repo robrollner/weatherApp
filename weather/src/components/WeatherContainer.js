@@ -49,6 +49,7 @@ class WeatherContainer extends Component {
                     City={this.state.result.name}
                     Weather={this.state.result.weather.main}
                     Temperture={this.state.result.main.temp}
+                    WindSpeed={this.state.result.wind.speed}
                   />
                 : <h3>No Results to Display</h3>}
             </Panel>

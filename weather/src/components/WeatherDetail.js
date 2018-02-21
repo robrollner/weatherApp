@@ -3,16 +3,16 @@ import React from "react";
 const WeatherDetail = props => <div className="text-center">
    
     <h3>
-        City: {props.name}
+        City: {props.City}
     </h3>
     <h4>
-        Weather: 
+        Weather: {props.Weather}
     </h4>
     <h4>
-        Temperture (F): {props.main}
+        Temperture (F): {props.Temperture}
     </h4>
     <h4>
-        Wind Speed: {props.wind}
+        Wind Speed: {props.WindSpeed}
     </h4>
 </div>;
 
