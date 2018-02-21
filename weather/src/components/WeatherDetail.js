@@ -6,13 +6,13 @@ const WeatherDetail = props => <div className="text-center">
         City: {props.name}
     </h3>
     <h4>
-        Weather: {props.weather.main}
+        Weather: 
     </h4>
     <h4>
-        Temperture (F): {props.main.temp}
+        Temperture (F): {props.main}
     </h4>
     <h4>
-        Wind Speed: {props.wind.speed}
+        Wind Speed: {props.wind}
     </h4>
 </div>;
 
