@@ -47,7 +47,7 @@ class WeatherContainer extends Component {
               {this.state.result.name
                 ? <WeatherDetail                    
                     City={this.state.result.name}
-                    Weather={this.state.result.weather.main}
+                    Weather={this.state.result.weather[0].description}
                     Temperture={this.state.result.main.temp}
                     WindSpeed={this.state.result.wind.speed}
                   />
