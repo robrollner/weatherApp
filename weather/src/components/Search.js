@@ -14,7 +14,7 @@ const Search = props =>
         id="search"
       />
       <br />
-      <button onClick={props.handleFormSubmit} className="btn btn-primary">
+      <button onClick={props.handleFormSubmit} className="btn btn-dark">
         Search
       </button>
     </div>

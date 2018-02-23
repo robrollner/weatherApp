@@ -2,7 +2,7 @@ import React from "react";
 
 const Panel = props =>
   <div className="panel panel-default">
-    <div className="panel-heading">
+    <div className="panel-heading text-center">
       <h2>
         {props.heading}
       </h2>

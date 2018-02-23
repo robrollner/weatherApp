@@ -5,27 +5,39 @@ import Col from "./Col";
 import Panel from "./Panel";
 import Search from "./Search";
 import WeatherDetail from "./WeatherDetail";
+import WeekForecast from "./WeekForecast";
 import API from "../utils/API";
+// import APIW from "../utils/APIW";
+
 
 class WeatherContainer extends Component {
   state = {
     result: {},
     search: ""
   };
+  
 
   componentDidMount() {
     this.searchWeather("80203");
   }
-
+  
   searchWeather = query => {
     API.search(query)
-      .then(res => this.setState({ result: res.data }))
-      .catch(err => console.log(err));
+    .then(res => this.setState({ result: res.data }))
+    .catch(err => console.log(err));
   };
-
+  
+   searchWeather = query => {
+    API.search(query)
+    .then(res => this.setState({ result: res.data }))
+    .catch(err => console.log(err));
+    console.log(query)
+  };
+  
   handleInputChange = event => {
     const value = event.target.value;
     const name = event.target.name;
+    console.log(name)
     this.setState({
       [name]: value
     });
@@ -52,10 +64,11 @@ class WeatherContainer extends Component {
                     WindSpeed={this.state.result.wind.speed}
                   />
                 : <h3>No Results to Display</h3>}
+               
             </Panel>
           </Col>
           <Col size="md-4">
-            <Panel heading="Search">
+            <Panel>
               <Search
                 value={this.state.search}
                 handleInputChange={this.handleInputChange}
@@ -64,6 +77,12 @@ class WeatherContainer extends Component {
             </Panel>
           </Col>
         </Row>
+          <Row>
+              <WeekForecast
+                    Temperture={this.state.result.list[0].main.temp}              
+              >
+              </WeekForecast>
+          </Row>
       </Container>
     );
   }
