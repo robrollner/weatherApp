@@ -26,13 +26,7 @@ class WeatherContainer extends Component {
     .then(res => this.setState({ result: res.data }))
     .catch(err => console.log(err));
   };
-  
-   searchWeather = query => {
-    API.search(query)
-    .then(res => this.setState({ result: res.data }))
-    .catch(err => console.log(err));
-    console.log(query)
-  };
+
   
   handleInputChange = event => {
     const value = event.target.value;
@@ -78,10 +72,11 @@ class WeatherContainer extends Component {
           </Col>
         </Row>
           <Row>
-              <WeekForecast
+            {this.state.result.list ? <WeekForecast
                     Temperture={this.state.result.list[0].main.temp}              
               >
-              </WeekForecast>
+              </WeekForecast> : null}
+              
           </Row>
       </Container>
     );
